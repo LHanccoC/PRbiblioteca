@@ -3,6 +3,7 @@
 #include "libro.h"
 #include "revistas.h"
 
+
 int main() {
 
 
