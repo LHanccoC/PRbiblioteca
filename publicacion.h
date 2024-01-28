@@ -3,7 +3,7 @@
 #include <bits/stc++.h>
 
 class Publicacion {
-    private:
+    protected:
         string titulo;
         int id;
         string autor;
@@ -13,6 +13,5 @@ class Publicacion {
         Publicacion(string, int, string, string, int);
         void getInfo();      
 } 
-
 #include "publicacion.cpp"
 #endif
