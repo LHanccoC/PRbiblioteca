@@ -1,5 +1,5 @@
-#ifndef PUBLIACION.H 
-#define PUBLIACION.H
+#ifndef PUBLICACION.H 
+#define PUBLICACION.H
 #include <bits/stc++.h>
 
 class Publicacion {
@@ -14,4 +14,5 @@ class Publicacion {
         void getInfo();      
 } 
 
+#include "publicacion.cpp"
 #endif
