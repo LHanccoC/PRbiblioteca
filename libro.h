@@ -2,7 +2,7 @@
 #define LIBRO.H
 #include <bits/stc++.h>
 
-class Libro {
+class Libro : public Publicacion{
     private:
         string ISBN;
         string editorial;

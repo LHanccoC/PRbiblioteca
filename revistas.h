@@ -2,7 +2,7 @@
 #define REVISTAS.H
 #include <bits/stc++.h>
 
-class Revista {
+class Revista : public Publicacion{
     private:
         string ISNN;
         string volumen;
