@@ -1,7 +1,8 @@
-#ifndef REVISTAS.H 
-#define REVISTAS.H
-#include <bits/stc++.h>
+#ifndef REVISTAS_H 
+#define REVISTAS_H
+#include <bits/stdc++.h>
 
+using namespace std;
 class Revista : public Publicacion{
     private:
         string ISNN;
@@ -9,6 +10,7 @@ class Revista : public Publicacion{
     public:
         Revista(string, int, string, string, int, string, string);
         void getinforev();    
-}
+};
+#include "publicacion.h"
 #include "revistas.cpp"
 #endif 

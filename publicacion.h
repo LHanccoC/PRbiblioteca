@@ -1,7 +1,8 @@
-#ifndef PUBLICACION.H 
-#define PUBLICACION.H
-#include <bits/stc++.h>
+#ifndef PUBLICACION_H 
+#define PUBLICACION_H
+#include <bits/stdc++.h>
 
+using namespace std;
 class Publicacion {
     protected:
         string titulo;
@@ -12,6 +13,6 @@ class Publicacion {
     public:
         Publicacion(string, int, string, string, int);
         void getInfo();      
-} 
+}; 
 #include "publicacion.cpp"
 #endif
