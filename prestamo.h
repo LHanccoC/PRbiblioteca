@@ -11,9 +11,7 @@ class Prestamo{
         Bibliotecario *pBiblio;
     public:
         void ingresarPrestamo(Bibliotecario *pB);
-        void ingresarDevolucion(Bibliotecario *pB);
         void verPrestamo(Bibliotecario *pB);
-        void separafecha(string fech,int &d,int &m,int &y);
         void registrarPrestamo(int& tpresta, Prestamo presta[],Bibliotecario *);
         void imprimirPrestamo(int& tpresta, Prestamo presta[],Bibliotecario *);
 

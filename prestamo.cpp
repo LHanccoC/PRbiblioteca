@@ -13,10 +13,6 @@ void Prestamo::ingresarPrestamo(Bibliotecario *pB){
     pB->ingresarDatos();
 }
 
-void Prestamo::ingresarDevolucion(Bibliotecario *pB){
-    ingresarPrestamo(pB);
-    cout<<"Fecha de la devolución (DD/MM/AAAA): ";cin>>fech_devol;
-}
 
 void Prestamo::verPrestamo(Bibliotecario *pB){
     cout<<"ID prestamo: "<<idpresta<<endl;
