@@ -1,7 +1,6 @@
 #ifndef PRESTAMO_H
 #define PRESTAMO_H
-#include<iostream>
-#include<string>
+
 #include "bibliotecario.h"
 //#include "lector.h"
 #include "publicacion.h"
@@ -15,16 +14,13 @@ class Prestamo{
        // Lector *pLector;
         Publicacion *pPubli;
     public:
-        void ingresarPrestamo();
-        void ingresarDevolucion();
-        void verPrestamo();
-        void verDevolucion();
-        int separafecha(string fech, int d,int m,int y);
-        void calcularMulta(string fech_presta,string fech_devol);
-        /*void registrarPrestamo(int& tpresta, Prestamo presta[],Bibliotecario *,Lector *, Publicacion *);
-        void registarDevolucion(int& tpresta, Prestamo presta[],Bibliotecario *,Lector *, Publicacion *);
-        void imprimirPrestamo(int& tpresta, Prestamo presta[],Bibliotecario *,Lector *, Publicacion *);
-        void imprimirDevolucion(int& tpresta, Prestamo presta[],Bibliotecario *,Lector *, Publicacion *);*/
+        void calcularMulta();
+        void ingresarPrestamo(Bibliotecario *pB);
+        void ingresarDevolucion(Bibliotecario *pB);
+        void verPrestamo(Bibliotecario *pB);
+        void separafecha(string fech,int &d,int &m,int &y);
+        void registrarPrestamo(int& tpresta, Prestamo presta[],Bibliotecario *,Publicacion *);
+        void imprimirPrestamo(int& tpresta, Prestamo presta[],Bibliotecario *, Publicacion *);
 
 };
 

@@ -1,14 +1,15 @@
 #include<bits/stdc++.h>
 #include "publicacion.h"
-#include "libro.h"
-#include "revistas.h"
+//#include "libro.h"
+//#include "revistas.h"
 #include "bibliotecario.h"
 #include "prestamo.h"
-
+const int MAX=100;
 using namespace std;
 int main() {
-    Bibliotecario biblio[100];
-    Prestamo presta[100];
+    Bibliotecario biblio[MAX];
+    Prestamo presta[MAX];
+    Publicacion *pP;
     int tbiblio=0, tpresta=0;
     fstream archivo;
     int op,op1;
@@ -16,7 +17,7 @@ int main() {
         cout<<"\nBIENVENIDOS AL SISTEMA\n\n";
         cout<<"1. Gestionar Bibliotecario"<<endl;
         cout<<"2. Gestionar Prestamo"<<endl;
-        cout<<"3. Gestionar Publicidad"<<endl;
+        cout<<"3. Gestionar ..."<<endl;
         cout<<"4. Salir"<<endl;
         cout<<"Ingrese opcion: ";cin>>op;
         switch(op){
@@ -49,30 +50,26 @@ int main() {
                  do{
                     cout<<"\nGESTIONAR PRESTAMO\n";
                     cout<<"1. Ingresar prestamo"<<endl;
-                    cout<<"2. Ingresar devolucion"<<endl;
-                    cout<<"3. Ver lista de prestamos"<<endl;
-                    cout<<"4. Ver lista de devoluciones"<<endl;
-                    cout<<"5. Volver al menu principal"<<endl;
+                    cout<<"2. Ver lista de prestamos"<<endl;
+                    cout<<"3. Calcula multa"<<endl;
+                    cout<<"4. Volver al menu principal"<<endl;
                     cout<<"Ingrese opcion: ";cin>>op1;
                     switch(op1){
                         case 1:
-                            //registrarPrestamo(tpresta,presta);
+                            registrarPrestamo(tpresta,presta,biblio,pP);
                             break;
                         case 2:
-                           // imprimirPrestamo(tpresta,presta);
+                            imprimirPrestamo(tpresta,presta,biblio,pP);
                             break;
                         case 3:
-                           // registarDevolucion(tpresta,presta);
+                            presta[MAX].calcularMulta();
                             break;
                         case 4:
-                           // imprimirDevolucion(tpresta,presta);
-                            break;
-                        case 5:
                             break;
                         default:
-                             cout<<"Opción invalida"<<endl;
+                             cout<<"OpciOn invalida"<<endl;
                     }
-                }while(op1!=5);
+                }while(op1!=4);
                 break;
         }
     }while(op!=4);

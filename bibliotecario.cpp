@@ -6,19 +6,16 @@
 using namespace std;
 
 void Bibliotecario::ingresarDatos(){
-    cout << "\nIngrese Id: ";
+    cout << "\nIngrese Id del bibliotecario: ";
     cin >> id; 
     cin.ignore();
-    cout << "Ingrese nombre: ";
-    cin.getline(nombre, MAX);
-    cout << "Ingrese apellido: ";
-    cin.getline(apellido, MAX);
+    cout << "Ingrese el nombre: ";
+    cin.getline(nombre, 50);
 }
 
 void Bibliotecario::verBibliotecario() {
-    cout << "\nId: " << id;
-    cout << "\nNombre: " << nombre;
-    cout << "\nApellidos: " << apellido;
+    cout << "\nId Bibliotecario: " << id;
+    cout << "\nNombres: " << nombre;
 }
 void registrarBibliotecario(int& tbiblio,Bibliotecario biblio[]){
     ofstream archivo;
@@ -98,32 +95,4 @@ void modificarBibliotecario(int& tbiblio,Bibliotecario biblio[]){
         } else {
             cout<<"Numero no valido"; 
         }
-    
-}
-
-void eliminarB(int& tbiblio,Bibliotecario biblio[]){
-    fstream archivo;
-    int numB;
-    cout<<"\nELIMINANDO BIBLIOTECARIO\n\n";
-    
-        cout << "Lista actual de empleados:\n";
-        archivo.open("bibliotecario.dat", ios::in | ios::out | ios::binary);
-        archivo.seekg(0, ios::end); 
-        tbiblio = archivo.tellg() / sizeof(Bibliotecario); 
-        archivo.seekg(0, ios::beg); 
-        for (int i = 0; i < tbiblio; i++) {
-            archivo.read((char*)&biblio[i], sizeof(Bibliotecario));
-            biblio[i].verBibliotecario();
-        }
-        archivo.close();
-        
-        cout<<"\n\nDigite el id a borrar: ";
-        cin>>numB;
-        numB--;
-        archivo.open("bibliotecario.dat", ios::in | ios::out | ios::binary);
-        for(numB=0;numB<tbiblio-1;numB++){
-            biblio[numB]=biblio[numB+1];
-        }
-        tbiblio--;
-        archivo.close();
 }
