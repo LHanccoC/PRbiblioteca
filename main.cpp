@@ -15,7 +15,6 @@ using namespace std;
 int main() {
     Bibliotecario biblio[MAX];
     Prestamo presta[MAX];
-    Publicacion *pP;
     int tbiblio=0, tpresta=0;
     fstream archivo;
     int op,op1;
@@ -63,32 +62,28 @@ int main() {
                             cout<<"Opción invalida"<<endl;
                     }
 
-                }while(op1!=5);
+                }while(op1!=4);
                 break;
             case 2:
                  do{
                     cout<<"\nGESTIONAR PRESTAMO\n";
                     cout<<"1. Ingresar prestamo"<<endl;
                     cout<<"2. Ver lista de prestamos"<<endl;
-                    cout<<"3. Calcula multa"<<endl;
-                    cout<<"4. Volver al menu principal"<<endl;
+                    cout<<"3. Volver al menu principal"<<endl;
                     cout<<"Ingrese opcion: ";cin>>op1;
                     switch(op1){
                         case 1:
-                            registrarPrestamo(tpresta,presta,biblio,pP);
+                            registrarPrestamo(tpresta,presta,biblio);
                             break;
                         case 2:
-                            imprimirPrestamo(tpresta,presta,biblio,pP);
+                            imprimirPrestamo(tpresta,presta,biblio);
                             break;
                         case 3:
-                            presta[MAX].calcularMulta();
-                            break;
-                        case 4:
                             break;
                         default:
                              cout<<"OpciOn invalida"<<endl;
                     }
-                }while(op1!=5);
+                }while(op1!=3);
                 break;
             case 3:
                 do{
@@ -113,8 +108,8 @@ int main() {
                         case 3:
                             admin[nAdmin]->GenerarReportes();
                             break;
-                        
                         default:
+                            cout<<"Opncion invalida"<<endl;
                         break;
                     }
                 }while(op1!=4);
@@ -145,12 +140,12 @@ int main() {
                             break;
                         
                         default:
-                        
+                            cout<<"Opcion invalida"<<endl;
                         break;
                     }
                 }while(op1!=4);
         }
-    }while(op!=4);
+    }while(op!=5);
 
 
 

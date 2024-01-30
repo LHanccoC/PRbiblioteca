@@ -26,46 +26,7 @@ void Prestamo::verPrestamo(Bibliotecario *pB){
     pB->verBibliotecario();
 }
 
-void Prestamo::separafecha(string fech, int& d,int& m,int& y){
-    size_t pos=0;
-    string dia,mes,anio;
-
-    pos=fech.find("/");
-    dia=fech.substr(0,pos);
-    fech.erase(0,pos+1);
-
-    pos=fech.find("/");
-    mes=fech.substr(0,pos);
-    fech.erase(0,pos+1);
-
-    anio=fech;
-    d=stoi(dia);
-    m=stoi(mes);
-    y=stoi(anio);
-}
-
-void Prestamo::calcularMulta(){
-    cout<<"\nCALCULO DE LA MULTA\n";
-    int d,m,y;
-    int d2,m2,y2;
-    float dDias,multa;
-
-    cout<<"Ingresar fecha del prestamo (DD/MM/AAAA): ";cin>>fech_presta;
-    cout<<"Ingresar fecha de la devolucion (DD/MM/AAAA): ";cin>>fech_devol;
-
-    separafecha(fech_presta,d,m,y);
-    separafecha(fech_devol,d2,m2,y2);
-
-    dDias=(y2*360+m2*30+d2)-(y*360+m*30+d);
-    if(dDias>3){
-        multa=dDias*1.00;
-        cout<<"El total de la multa es: "<<multa<<endl;
-    }else{
-        cout<<"No se aplica multa."<<endl;
-    }
-}
-
-void registrarPrestamo(int& tpresta, Prestamo presta[],Bibliotecario *pB,Publicacion *pP){
+void registrarPrestamo(int& tpresta, Prestamo presta[],Bibliotecario *pB){
     ofstream archivo;
     cout << "\nREGISTRAR PRESTAMO" << endl;
     char op;
@@ -87,7 +48,7 @@ void registrarPrestamo(int& tpresta, Prestamo presta[],Bibliotecario *pB,Publica
     }
 }
 
-void imprimirPrestamo(int& tpresta, Prestamo presta[],Bibliotecario *pB, Publicacion *){
+void imprimirPrestamo(int& tpresta, Prestamo presta[],Bibliotecario *pB){
     cout << "\nLISTA DE PRESTAMOS\n";
     ifstream archivo;
     archivo.open("prestamo.dat", ios::in | ios::binary);
