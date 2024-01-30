@@ -108,6 +108,8 @@ int main() {
                         case 3:
                             admin[nAdmin]->GenerarReportes();
                             break;
+                        case 4:
+                            break;
                         default:
                             cout<<"Opncion invalida"<<endl;
                         break;
@@ -138,7 +140,8 @@ int main() {
                         case 3:
                             lectores[nLectores]->verHistorial();
                             break;
-                        
+                        case 4:
+                            break;
                         default:
                             cout<<"Opcion invalida"<<endl;
                         break;
