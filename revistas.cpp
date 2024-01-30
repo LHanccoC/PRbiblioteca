@@ -1,6 +1,6 @@
 #include "revistas.h"
 
-Revista :: Revista(string f, string g) : Publicacion(string a, int b, string c, string d, int e){
+(string a, int b, string c, string d, int e,string f, string g) : Publicacion(a,b,c,d,e){
     ISNN = f;
     volumen = g;
 }
@@ -11,10 +11,10 @@ void Revista :: getinforev(){
     cout << "Volumen de la revista: " <<volumen<<endl;
 }
 
-string Publicacion :: getISNN(){
+string Revista :: getISNN(){
     return ISNN;
 }
 
-string Publicacion :: getvolumen(){
+string Revista :: getvolumen(){
     return volumen;
 }
