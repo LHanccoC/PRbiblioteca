@@ -14,5 +14,5 @@ class Reporte{
 		void MostrarReporte();
 		
 };
-
+#include "Reporte.cpp"
 #endif
