@@ -12,7 +12,6 @@ class Prestamo{
         string fech_presta, fech_devol;
         Bibliotecario *pBiblio;
     public:
-        void calcularMulta();
         void ingresarPrestamo(Bibliotecario *pB);
         void ingresarDevolucion(Bibliotecario *pB);
         void verPrestamo(Bibliotecario *pB);
