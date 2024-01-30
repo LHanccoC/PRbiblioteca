@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
-#include "Ordenacion.h"
-#include "Busqueda.h"
+//#include "Ordenacion.h"
+//#include "Busqueda.h"
 #include "publicacion.h"
 //#include "revistas.h"
 #include "bibliotecario.h"

@@ -1,6 +1,6 @@
 #include "libro.h"
 
-Libro :: Libro(string f, string g) : Publicacion(string a, int b, string c, string d, int e){
+Libro :: Libro(string a, int b, string c, string d, int e,string f, string g) : Publicacion(a,b,c,d,e){
     ISBN = f;
     editorial = g;
 }
@@ -11,11 +11,11 @@ void Libro :: getinfolibro(){
     cout << "Editorial del libro: " <<editorial<<endl;
 }
 
-string Publicacion :: getISBN(){
+string Libro :: getISBN(){
     return ISBN;
 }
 
-string Publicacion :: geteditorial(){
+string Libro :: geteditorial(){
     return editorial;
 }
 
