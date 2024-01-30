@@ -39,12 +39,12 @@ int main() {
                         case 3:
                             modificarBibliotecario(tbiblio,biblio);
                             break;
-                        case 5:
+                        case 4:
                             break;
                         default:
                             cout<<"Opción invalida"<<endl;
                     }
-                }while(op1!=5);
+                }while(op1!=4);
                 break;
             case 2:
                  do{
