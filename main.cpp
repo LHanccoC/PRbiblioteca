@@ -21,14 +21,13 @@ int main() {
     int op,op1;
     Administrador *admin[MAX];
     int nAdmin;
-    Lector lectores[MAX];
-    Publicacion *publicaciones[MAX];
+    Lector *lectores[MAX];
+    int nLectores;
 
-    publicaciones[0]  = new Libro("La comedia humana",20399,"Honoré de Balzac","1999",253);
-    publicaciones[1]  = new Libro("El Buscon",20397,"Francisco de Quevedo","1997",96);
-    publicaciones[2]  = new Libro("Dracula",20359,"Bram Stroker","1979",210);
-    publicaciones[3]  = new Libro("Fausto",20434,"Goethe","1983",237);
-    publicaciones[4]  = new Libro("100 años de soledad",20430,"Gabriel García Márquez","1989",185);
+    // Publicacion *publicaciones[MAX];
+    // publicaciones[0] = new Publicacion("asd",32,"asssa","aad",232);
+
+
 
 
     do{
@@ -36,7 +35,7 @@ int main() {
         cout<<"1. Gestionar Bibliotecario"<<endl;
         cout<<"2. Gestionar Prestamo"<<endl;
         cout<<"3. Gestionar Administrador"<<endl;
-        cout<<"4. Gestionar ..."<<endl;
+        cout<<"4. Gestionar Lectores"<<endl;
         cout<<"5. Salir"<<endl;
         cout<<"Ingrese opcion: ";cin>>op;
         switch(op){
@@ -119,7 +118,37 @@ int main() {
                         break;
                     }
                 }while(op1!=4);
-            
+            case 4:
+                do{
+                    cout<<"\nGESTIONAR LECTORES\n";
+                    cout<<"1. Registrar LECTORES"<<endl;
+                    cout<<"2. Realizar prestamo "<<endl;
+                    cout<<"3. Mostrar historial"<<endl;
+                    cout<<"4. Volver al menu principal"<<endl;
+                    cin>>op1;
+                    switch (op1)
+                    {
+                        case 1:{
+                            string n,dni; 
+                            int id;
+                            cout<<"Ingrese el nombre: "; cin>>n;
+                            cout<<"Ingrese el dni: "; cin>>dni;
+                            cout<<"Ingrese el id: "; cin>> id;
+                            lectores[nLectores] = new Lector(n,dni,id);
+                            break;
+                            }
+                        case 2:
+                            lectores[nLectores]->RealizarPrestamo();
+                            break;
+                        case 3:
+                            lectores[nLectores]->verHistorial();
+                            break;
+                        
+                        default:
+                        
+                        break;
+                    }
+                }while(op1!=4);
         }
     }while(op!=4);
 

@@ -11,10 +11,11 @@ class Lector{
 		string nombre;
 		string HistorialPrestamo[100];
 	public:
-		//Lector(int,string,string) ;
+		Lector(string,string,int);
 		void RealizarPrestamo();
 		void verHistorial();
 		
 };
 
+#include "lector.cpp"
 #endif

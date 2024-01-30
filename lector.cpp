@@ -4,11 +4,16 @@
 #include <iomanip>
 #include <string.h>
 
+Lector :: Lector(string n,string d,int i){
+    nombre = n;
+    DNI = d;
+    IDlector = i;
+}
+
 void Lector :: RealizarPrestamo(){
 	ofstream archivo2;
 	string rp,dni,tipo,tl;
 	int n;
-
     archivo2.open("HPrestamos.txt",ios :: out);
     if(!archivo2){
         cout<<"No se pudo abrir el archivo "<<endl;
