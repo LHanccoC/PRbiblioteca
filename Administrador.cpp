@@ -37,7 +37,7 @@ void Administrador :: MostrarReportes(){
 		     cout<<"\nTengo "<<" "<<numeroR<<"reportes : "<<endl;
 		      for(int i=0;i<numeroR;i++){
 			   cout<<"\t "; 
-			   reportes[i] ->MostrarReporte();
+			   reportes[i]->MostrarReporte();
 		      }
 	       }  
             cout<<cl<<":\t"<<lineatexto<<endl;
@@ -62,7 +62,7 @@ void Administrador :: GenerarReportes(){
     else{
         cout<<"Acceso correcto\n";
         cout<< "Desea hacer un reporte ? : "<<endl;
-	    cout<<"SI/NO";
+	    cout<<"SI/NO: ";
 	    cin>>rp;
 	    cin.ignore();
 	    if(rp == "SI"){
