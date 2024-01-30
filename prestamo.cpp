@@ -3,8 +3,6 @@
 #include<fstream>
 #include<iomanip>
 #include "bibliotecario.h"
-//#include "Lector.h"
-#include "publicacion.h"
 #include "prestamo.h"
 
 void Prestamo::ingresarPrestamo(Bibliotecario *pB){

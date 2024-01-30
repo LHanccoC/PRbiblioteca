@@ -1,9 +1,7 @@
 #ifndef PRESTAMO_H
 #define PRESTAMO_H
-
 #include "bibliotecario.h"
-//#include "lector.h"
-#include "publicacion.h"
+
 
 
 class Prestamo{

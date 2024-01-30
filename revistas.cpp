@@ -1,6 +1,6 @@
 #include "revistas.h"
 
-(string a, int b, string c, string d, int e,string f, string g) : Publicacion(a,b,c,d,e){
+Revista::Revista(string a, int b, string c, string d, int e,string f, string g) : Publicacion(a,b,c,d,e){
     ISNN = f;
     volumen = g;
 }
