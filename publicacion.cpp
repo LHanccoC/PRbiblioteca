@@ -16,3 +16,25 @@ void Publicacion :: getInfo(){
     cout << "Numero de paginas: " <<npagina<<endl;
 }
 
+string Publicacion :: gettitulo(){
+    return titulo;
+}
+
+int Publicacion :: getid(){
+    return id;
+}
+
+string Publicacion :: getautor(){
+    return autor;
+}
+
+string Publicacion :: getfecha(){
+    return fecha;
+}
+
+int Publicacion :: getnpagina(){
+    return npagina;
+}
+
+
+

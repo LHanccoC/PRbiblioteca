@@ -10,3 +10,11 @@ void Revista :: getinforev(){
     cout << "ISNN de la revista: " <<ISNN<<endl;
     cout << "Volumen de la revista: " <<volumen<<endl;
 }
+
+string Publicacion :: getISNN(){
+    return ISNN;
+}
+
+string Publicacion :: getvolumen(){
+    return volumen;
+}

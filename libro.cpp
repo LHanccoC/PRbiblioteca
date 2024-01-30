@@ -10,3 +10,12 @@ void Libro :: getinfolibro(){
     cout << "ISBN del libro: " <<ISBN<<endl;
     cout << "Editorial del libro: " <<editorial<<endl;
 }
+
+string Publicacion :: getISBN(){
+    return ISBN;
+}
+
+string Publicacion :: geteditorial(){
+    return editorial;
+}
+

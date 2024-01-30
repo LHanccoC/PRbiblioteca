@@ -10,6 +10,8 @@ class Libro : public Publicacion{
     public:
         Libro(string, int, string, string, int, string, string);
         void getinfolibro();
+        string getISBN();
+        string geteditorial();
 };
 #include "publicacion.h"
 #include "libro.cpp"

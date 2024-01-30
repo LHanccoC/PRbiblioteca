@@ -12,7 +12,12 @@ class Publicacion {
         int npagina;
     public:
         Publicacion(string, int, string, string, int);
-        void getInfo();      
+        void getInfo(); 
+        string gettitulo();
+        int getid();
+        string getautor();
+        string getfecha();
+        int getnpagina();     
 }; 
 #include "publicacion.cpp"
 #endif

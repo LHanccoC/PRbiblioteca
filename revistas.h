@@ -10,6 +10,8 @@ class Revista : public Publicacion{
     public:
         Revista(string, int, string, string, int, string, string);
         void getinforev();    
+        string getISNN();
+        string getvolumen();
 };
 #include "publicacion.h"
 #include "revistas.cpp"
