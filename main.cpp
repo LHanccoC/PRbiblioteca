@@ -13,6 +13,8 @@ int main() {
     int tbiblio=0, tpresta=0;
     fstream archivo;
     int op,op1;
+
+    
     do{
         cout<<"\nBIENVENIDOS AL SISTEMA\n\n";
         cout<<"1. Gestionar Bibliotecario"<<endl;
