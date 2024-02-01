@@ -73,7 +73,7 @@ int main() {
                             presta[MAX].registrarPrestamo(tpresta,presta,biblio,tbiblio);
                             break;
                         case 2:
-                            imprimirPrestamo(tpresta,presta,biblio);
+                            presta[MAX].imprimirPrestamo(tpresta,presta,biblio);
                             break;
                         case 3:
                             break;

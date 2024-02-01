@@ -13,6 +13,7 @@ class Bibliotecario{
         void imprimirB(int tbiblio,Bibliotecario biblio[]);
         void modificarBibliotecario(int& tbiblio,Bibliotecario biblio[]);
         int getid();
+        char getnomb();
 };
 
 #include "bibliotecario.cpp"

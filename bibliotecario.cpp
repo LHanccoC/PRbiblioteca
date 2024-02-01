@@ -89,3 +89,7 @@ void modificarBibliotecario(int& tbiblio,Bibliotecario biblio[]){
 int Bibliotecario::getid(){
     return id;
 }
+
+char Bibliotecario::getnomb(){
+    return nombre[50];
+}

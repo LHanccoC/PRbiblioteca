@@ -9,9 +9,11 @@ class Prestamo{
         int idpresta;
         string fech_presta, fech_devol;
         Bibliotecario *B;
+        int b,x;
     public:
         void ingresarPrestamo();
-        void verPrestamo();
+        void verPrestamo(Bibliotecario *B);
+        void setBibliotecario(int);
         void registrarPrestamo(int& tpresta, Prestamo presta[], Bibliotecario *B,int&);
         void imprimirPrestamo(int& tpresta, Prestamo presta[],Bibliotecario *B);
 };
