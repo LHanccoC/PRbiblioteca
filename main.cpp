@@ -73,7 +73,7 @@ int main() {
                     cout<<"Ingrese opcion: ";cin>>op1;
                     switch(op1){
                         case 1:
-                            registrarPrestamo(tpresta,presta,biblio);
+                            registrarPrestamo(tpresta,presta,biblio,tbiblio);
                             break;
                         case 2:
                             imprimirPrestamo(tpresta,presta,biblio);
@@ -93,8 +93,7 @@ int main() {
                     cout<<"3. Generar Reportes"<<endl;
                     cout<<"4. Volver al menu principal"<<endl;
                     cin>>op1;
-                    switch (op1)
-                    {
+                    switch (op1){
                         case 1:{
                             string n, id; 
                             cout<<"Ingrese el nombre: "; cin>>n;

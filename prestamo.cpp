@@ -5,12 +5,10 @@
 #include "bibliotecario.h"
 #include "prestamo.h"
 
-void Prestamo::ingresarPrestamo(Bibliotecario *pB){
-    cout<<"ID prestamo: ";cin>>idpresta;
+void Prestamo::ingresarPrestamo(){
+    cout<<"\nID prestamo: ";cin>>idpresta;
     cin.ignore();
-    cout<<"Fecha del prestamo (DD/MM/AAAA): ";cin>>fech_presta;
-    cout<<"\nINGRESAR DATOS DEL BIBLIOTECARIO"<<endl;
-    pB->ingresarDatos();
+    cout<<"Fecha del prestamo (DD/MM/AAAA): ";getline(cin,fech_presta);
 }
 
 
@@ -20,18 +18,33 @@ void Prestamo::verPrestamo(Bibliotecario *pB){
     pB->verBibliotecario();
 }
 
-void registrarPrestamo(int& tpresta, Prestamo presta[],Bibliotecario *pB){
+void registrarPrestamo(int& tpresta, Prestamo presta[],Bibliotecario *B,int tbiblio){
     ofstream archivo;
     cout << "\nREGISTRAR PRESTAMO" << endl;
     char op;
-    int idb,idp;
+    int b;
     tpresta=0;
+    bool idValido=false;
     archivo.open("prestamo.dat", ios::app | ios::binary);
     if (!archivo.is_open()) {
         cout << "No se pudo abrir el archivo." << endl;
     } else {
         do{
-            presta[tpresta].ingresarPrestamo(pB);
+            presta[tpresta].ingresarPrestamo();
+            imprimirB(tbiblio,B);
+            do{
+                cout<<"Ingrese el id del bibliotecario:";cin>>b;
+                for (int i = 0; i < tbiblio; ++i) {
+                    if (b == B[i].getid()) {
+                        idValido = true;
+                        break;
+                    }
+                }
+                if (idValido=false) {
+                    cerr << "No existe ese id de usuario" << endl;
+                }
+            } while (idValido=false);
+            
             archivo.write((char*)&presta[tpresta], sizeof(Prestamo));
             cout<<"Desea ingresar otro prestamo ? (S/N):";
             cin>>op;

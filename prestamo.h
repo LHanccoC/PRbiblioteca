@@ -8,13 +8,13 @@ class Prestamo{
     private:
         int idpresta;
         string fech_presta, fech_devol;
-        Bibliotecario *pBiblio;
+        Bibliotecario *B;
     public:
-        void ingresarPrestamo(Bibliotecario *pB);
+        void ingresarPrestamo();
         void verPrestamo(Bibliotecario *pB);
-        void registrarPrestamo(int& tpresta, Prestamo presta[],Bibliotecario *);
+        void registrarPrestamo(int& tpresta, Prestamo presta[], Bibliotecario *,int);
         void imprimirPrestamo(int& tpresta, Prestamo presta[],Bibliotecario *);
-
+        void buscarbibliotecario();
 };
 
 #include "prestamo.cpp"
