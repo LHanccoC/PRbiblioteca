@@ -25,7 +25,6 @@ void registrarBibliotecario(int& tbiblio,Bibliotecario biblio[]){
     if (!archivo.is_open()) {
         cout << "No se pudo abrir el archivo." << endl;
     } else {
-        tbiblio=0;
         do{
             biblio[tbiblio].ingresarDatos();
             archivo.write((char*)&biblio[tbiblio], sizeof(Bibliotecario));
@@ -84,6 +83,7 @@ void modificarBibliotecario(int& tbiblio,Bibliotecario biblio[]){
         } else {
             cout<<"Numero no valido"; 
         }
+        archivo.close();
 }
 
 int Bibliotecario::getid(){

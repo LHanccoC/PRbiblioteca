@@ -10,12 +10,13 @@
 #include "Reporte.h"
 #include "libro.h"
 
+
 const int MAX=100;
 using namespace std;
 int main() {
     Bibliotecario biblio[MAX];
     Prestamo presta[MAX];
-    int tbiblio=0, tpresta=0;
+    int tbiblio=0, tpresta;
     fstream archivo;
     int op,op1;
     Administrador *admin[MAX];
@@ -25,10 +26,6 @@ int main() {
 
     // Publicacion *publicaciones[MAX];
     // publicaciones[0] = new Publicacion("asd",32,"asssa","aad",232);
-
-
-
-
     do{
         cout<<"\nBIENVENIDOS AL SISTEMA\n\n";
         cout<<"1. Gestionar Bibliotecario"<<endl;
@@ -73,7 +70,7 @@ int main() {
                     cout<<"Ingrese opcion: ";cin>>op1;
                     switch(op1){
                         case 1:
-                            registrarPrestamo(tpresta,presta,biblio,tbiblio);
+                            presta[MAX].registrarPrestamo(tpresta,presta,biblio,tbiblio);
                             break;
                         case 2:
                             imprimirPrestamo(tpresta,presta,biblio);
@@ -148,9 +145,5 @@ int main() {
                 }while(op1!=4);
         }
     }while(op!=5);
-
-
-
-
     return 0; 
 }

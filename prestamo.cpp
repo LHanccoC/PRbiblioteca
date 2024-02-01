@@ -12,18 +12,16 @@ void Prestamo::ingresarPrestamo(){
 }
 
 
-void Prestamo::verPrestamo(Bibliotecario *pB){
+void Prestamo::verPrestamo(){
     cout<<"ID prestamo: "<<idpresta<<endl;
     cout<<"Fecha del prestamo: "<<fech_presta<<endl;
-    pB->verBibliotecario();
 }
 
-void registrarPrestamo(int& tpresta, Prestamo presta[],Bibliotecario *B,int tbiblio){
+void Prestamo::registrarPrestamo(int& tpresta, Prestamo presta[],Bibliotecario *B,int &tbiblio){
     ofstream archivo;
     cout << "\nREGISTRAR PRESTAMO" << endl;
     char op;
     int b;
-    tpresta=0;
     bool idValido=false;
     archivo.open("prestamo.dat", ios::app | ios::binary);
     if (!archivo.is_open()) {
@@ -34,16 +32,19 @@ void registrarPrestamo(int& tpresta, Prestamo presta[],Bibliotecario *B,int tbib
             imprimirB(tbiblio,B);
             do{
                 cout<<"Ingrese el id del bibliotecario:";cin>>b;
-                for (int i = 0; i < tbiblio; ++i) {
+                cout<<b<<endl;
+                int i=0;
+                while (B[i].getid()!=0){
                     if (b == B[i].getid()) {
                         idValido = true;
                         break;
                     }
+                    i++;
                 }
-                if (idValido=false) {
+                if (idValido==false) {
                     cerr << "No existe ese id de usuario" << endl;
                 }
-            } while (idValido=false);
+            } while (idValido==false);
             
             archivo.write((char*)&presta[tpresta], sizeof(Prestamo));
             cout<<"Desea ingresar otro prestamo ? (S/N):";
@@ -55,7 +56,7 @@ void registrarPrestamo(int& tpresta, Prestamo presta[],Bibliotecario *B,int tbib
     }
 }
 
-void imprimirPrestamo(int& tpresta, Prestamo presta[],Bibliotecario *pB){
+void imprimirPrestamo(int &tpresta, Prestamo presta[],Bibliotecario *pB){
     cout << "\nLISTA DE PRESTAMOS\n";
     ifstream archivo;
     archivo.open("prestamo.dat", ios::in | ios::binary);
@@ -67,7 +68,7 @@ void imprimirPrestamo(int& tpresta, Prestamo presta[],Bibliotecario *pB){
             archivo.seekg(0, ios::beg); 
             for (int i = 0; i < tpresta; i++) {
                 archivo.read((char*)&presta[i], sizeof(Prestamo));
-                presta[i].verPrestamo(pB);
+                presta[i].verPrestamo();
             }
             archivo.close();
         

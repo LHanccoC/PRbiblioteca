@@ -11,10 +11,9 @@ class Prestamo{
         Bibliotecario *B;
     public:
         void ingresarPrestamo();
-        void verPrestamo(Bibliotecario *pB);
-        void registrarPrestamo(int& tpresta, Prestamo presta[], Bibliotecario *,int);
-        void imprimirPrestamo(int& tpresta, Prestamo presta[],Bibliotecario *);
-        void buscarbibliotecario();
+        void verPrestamo();
+        void registrarPrestamo(int& tpresta, Prestamo presta[], Bibliotecario *B,int&);
+        void imprimirPrestamo(int& tpresta, Prestamo presta[],Bibliotecario *B);
 };
 
 #include "prestamo.cpp"
