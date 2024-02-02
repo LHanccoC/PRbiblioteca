@@ -16,6 +16,7 @@ class Bibliotecario{
         string getPasswd();
         string getNombre();
         int getId();
+        bool operator>(Bibliotecario);
         
         
 };

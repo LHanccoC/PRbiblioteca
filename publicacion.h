@@ -10,15 +10,18 @@ class Publicacion {
         string autor;
         string fecha;
         int nPagina;
+        bool disponible = true;
     public:
-        Publicacion(string, int, string, string, int);
+        Publicacion(string, int, string, string, int,bool);
         Publicacion();
-        void getInfo(); 
+        virtual void getInfo() = 0;
         string getTitulo();
         int getId();
         string getAutor();
         string getFecha();
-        int getnPagina();     
+        int getnPagina();
+        bool getDisponible();
+        void setDisponible(bool b);
 }; 
 #include "publicacion.cpp"
 #endif

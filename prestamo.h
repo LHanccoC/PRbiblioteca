@@ -8,18 +8,24 @@ class Prestamo{
         Publicacion *publicacion;
         int idPrestamo;
         Lector *lector;
-        string fechaPrestamo();
-        string fechaDevolucion();
+        string fechaPrestamo;
+        string fechaDevolucion = "-";
+        
 
     public:
         Prestamo();
-        void setFechaPrest();
-        void setFechaDevolucion();
+        void setFechaPrest(string);
+        void setFechaDevolucion(string);
         void setPublicacion(Publicacion *);
-        void setId();
+        void setId(int);    
+ 
         void setLector(Lector *);
+        void getInfo();
+        bool operator>(Prestamo);
+        int getId();
+        string getFechaDevolucion();
 };
-
+#include "lector.h"
 #include "prestamo.cpp "
 
 #endif

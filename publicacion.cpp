@@ -1,22 +1,19 @@
 #include "publicacion.h"
 
-Publicacion :: Publicacion(string a, int b, string c, string d, int e){
+Publicacion :: Publicacion(string a, int b, string c, string d, int e, bool h){
     titulo = a;
     id = b;
     autor = c;
     fecha = d;
     nPagina = e;
+    disponible = h;
 }
 Publicacion::Publicacion(){
     
 }
 
-void Publicacion :: getInfo(){
-    cout << "El titulo es: " <<titulo<<endl;
-    cout << "El id es: " <<id<<endl;
-    cout << "El autor es: " <<autor<<endl;
-    cout << "La fecha es: " <<fecha<<endl;
-    cout << "Numero de paginas: " <<nPagina<<endl;
+bool Publicacion::getDisponible(){
+    return disponible;
 }
 
 string Publicacion :: getTitulo(){
@@ -37,4 +34,8 @@ string Publicacion :: getFecha(){
 
 int Publicacion :: getnPagina(){
     return nPagina;
+}
+
+void Publicacion :: setDisponible(bool b){
+    disponible = b;
 }

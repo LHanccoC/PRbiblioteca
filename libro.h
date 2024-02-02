@@ -8,8 +8,8 @@ class Libro : public Publicacion{
         string ISBN;
         string editorial;
     public:
-        Libro(string, int, string, string, int, string, string);
-        void getinfolibro();
+        Libro(string, int, string, string, int, string, string, bool);
+        void getInfo();
         string getISBN();
         string geteditorial();
 };

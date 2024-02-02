@@ -8,8 +8,8 @@ class Revista : public Publicacion{
         string ISNN;
         string volumen;
     public:
-        Revista(string, int, string, string, int, string, string);
-        void getinforev();    
+        Revista(string, int, string, string, int, string, string,bool);
+        void getInfo();
         string getISNN();
         string getvolumen();
 };

@@ -23,3 +23,10 @@ string Bibliotecario::getNombre(){
 int Bibliotecario::getId(){
     return id;
 }
+
+bool Bibliotecario::operator>(Bibliotecario biblio){
+    if(id > biblio.id){
+        return true;
+    }
+    return false;
+}

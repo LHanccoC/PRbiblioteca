@@ -9,12 +9,16 @@ class Lector {
         string dni;
         int id;
         Prestamo *prestamo;
-        bool prestado;
     public:
         Lector(string,string,int);
         Lector();
         void setPrestamo(Prestamo *p);
-        void setPrestado(bool);
+        void setNombre(string);
+        void setDni(string);
+        void setId(int);
+        int getId();
+        void getInfo();     
+        bool operator>(Lector);
 };
 #include "prestamo.h"
 

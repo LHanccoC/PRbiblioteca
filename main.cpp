@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 #include <windows.h> 
-#include "registro.h"
+
 #include "biblio.h"
 #include "publicacion.h"
 #include "libro.h"
@@ -10,14 +10,15 @@
 
 #include "administrador.h"
 #include "admin.h"
+#include "registro.h"
 using namespace std;
 
 int main(){
     int op;
     int op1;
     Admin admin;
-    admin.registrarAdministrador("ferchis","ola");
-
+    Registro registro(&admin);
+    system("cls");
     cout<<"BIENVENIDO AL SISTEMA DE GESTION DE BIBLIOTECA";
     system("pause>nul");
     do{
@@ -60,7 +61,7 @@ int main(){
                                 cin>>n;
                                 cout<<"Ingrese el passwd del nuevo administrador: ";
                                 cin>>p;
-                                admin.registrarAdministrador(n,p);
+                                admin.registrarAdministrador(n,p,true);
                                 break;
                             }
                             case 2: {
@@ -74,13 +75,18 @@ int main(){
                                 cin>>p;
                                 cout<<"Ingrese el id del nuevo biblioteacario: ";
                                 cin>>id;
-                                if(admin.registrarBiblibliotecario(n,p,id)){
+                                if(admin.registrarBiblibliotecario(n,p,id,true)){
                                     cout<<"Se ha registrado el bibliotecario correctamente ";
                                 }
                                 else{
                                     cout<<"Ese id ya ha sido ocupado ";
                                 }
                                 break;
+                            }
+                            case 3: {
+                                system("cls");
+                                admin.generarReporte();
+                                system("pause>nul");
                             }
                             default:
                                 break;
@@ -116,8 +122,10 @@ int main(){
                         cout<<"ELIGA UNA OPCION: "<<endl;
                         cout<<"1. Registrar una nueva publicacion"<<endl;
                         cout<<"2. Registrar un lector"<<endl;
-                        cout<<"3. Realizar un prestamo"<<endl;
-                        cout<<"4. Volver al menu principal"<<endl;
+                        cout<<"3. Mostrar las publicaciones disponibles"<<endl;
+                        cout<<"4. Realizar un prestamo"<<endl;
+                        cout<<"5. Devolver un prestamo"<<endl;
+                        cout<<"6. Volver al menu principal"<<endl;
                         cin>>op1;
                         switch(op1){
                             case 1:{
@@ -146,7 +154,7 @@ int main(){
                                         cin>>f;
                                         cout<<"Ingrese el editorial: ";
                                         cin>>g;
-                                        admin.registrarLibros(a,b,c,d,e,f,g);                               
+                                        admin.registrarLibros(a,b,c,d,e,f,g,true,true);                               
                                         break;
                                     case 2:
                                         cout<<"Ingrese el titulo: ";
@@ -163,16 +171,86 @@ int main(){
                                         cin>>f;
                                         cout<<"Ingrese el volumen: ";
                                         cin>>g;
-                                        admin.registrarRevistas(a,b,c,d,e,f,g);     
+                                        admin.registrarRevistas(a,b,c,d,e,f,g,true,true);     
                                         break;
                                     default:
                                         break;
                                 }
                                 break;
                             }
+
+                            case 2: {
+                                string n,dni;
+                                int id;   
+                                cout<<"Ingrese el nombre del nuevo lector: ";
+                                cin>>n;
+                                cout<<"Ingrese el dni del nuevo lector: ";
+                                cin>>dni;
+                                cout<<"Ingrese el id del nuevo lector:  ";
+                                cin>>id;
+                                if(admin.registrarLector(n,dni,id,true)){
+                                    system("cls");
+                                    cout<<"Se ha registrado el lector correctamente ";
+                                    system("pause>nul");
+
+                                }
+                                else{
+                                    system("cls");
+                                    cout<<"Ese id ya ha sido ocupado ";                                
+                                    system("pause>nul");
+                                }
+                                break;
+                            }
+                            case 3: {
+                                system("cls");
+                                admin.mostrarPublicaciones();
+                                system("pause>nul");
+                                break;
+                            }
+                            case 4: {
+                                int i,b,c;
+                                string fech;
+                                cout<<"Ingrese el id del prestamo: ";
+                                cin>>i;
+                                cout<<"Ingrese la fecha del prestamo: ";
+                                cin>>fech;
+                                cout<<"Ingrese el id del lector: ";
+                                cin>>b;
+                                cout<<"Ingrese el id de la publicacion: ";
+                                cin>>c;
+                                if(admin.realizarPrestamo(fech,c,b,i,true)){
+                                    system("cls");
+                                    cout<<"Se ha realizado el prestamo con exito ";
+                                    system("pause>nul");
+                                }
+                                else{
+                                    system("cls");
+                                    cout<<"No se ha podido realizar el prestamo ";
+                                    system("pause>nul");
+                                }
+                                break;
+                            }
+                            case 5: {
+                                int i;
+                                string fech;
+                                cout<<"Ingrese el id del prestamo a devolver: ";
+                                cin>>i;
+                                cout<<"Ingrese la fecha de la devolucion: ";
+                                cin>>fech;
+                                if(admin.devolverPrestamo(i,fech,true)){
+                                    system("cls");
+                                    cout<<"Se devolvio correctamente";
+                                    system("pause>nul");
+                                }
+                                else{
+                                    system("cls");
+                                    cout<<"Ingreso mal el id o este prestamo ya fue devuelto";
+                                    system("pause>nul");
+                                }
+                            }
                         }
                         
-                    }while(op1 != 4);
+                    }while(op1 != 6);
                 }
                 else{
                     cout<<"Passwd o usuario incorrecto ";
@@ -183,5 +261,4 @@ int main(){
                 
         }
     }while(op != 3);
-    
 }
