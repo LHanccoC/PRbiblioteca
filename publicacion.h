@@ -9,15 +9,16 @@ class Publicacion {
         int id;
         string autor;
         string fecha;
-        int npagina;
+        int nPagina;
     public:
         Publicacion(string, int, string, string, int);
+        Publicacion();
         void getInfo(); 
-        string gettitulo();
-        int getid();
-        string getautor();
-        string getfecha();
-        int getnpagina();     
+        string getTitulo();
+        int getId();
+        string getAutor();
+        string getFecha();
+        int getnPagina();     
 }; 
 #include "publicacion.cpp"
 #endif

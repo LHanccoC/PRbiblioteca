@@ -1,21 +1,23 @@
 #ifndef LECTOR_H
 #define LECTOR_H
-#include <iostream>
-#include <string.h>
-using namespace std;
 
-class Lector{
-	private:
-		int IDlector;
-		string DNI;
-		string nombre;
-		string HistorialPrestamo[100];
-	public:
-		Lector(string,string,int);
-		void RealizarPrestamo();
-		void verHistorial();
-		
+using namespace std;
+class Prestamo;
+class Lector {
+    private:
+        string nombre;
+        string dni;
+        int id;
+        Prestamo *prestamo;
+        bool prestado;
+    public:
+        Lector(string,string,int);
+        Lector();
+        void setPrestamo(Prestamo *p);
+        void setPrestado(bool);
 };
+#include "prestamo.h"
 
 #include "lector.cpp"
+
 #endif

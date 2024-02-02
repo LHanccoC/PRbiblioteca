@@ -1,7 +1,7 @@
 #ifndef LIBRO_H 
 #define LIBRO_H
 #include <bits/stdc++.h>
-
+#include "publicacion.h"
 using namespace std;
 class Libro : public Publicacion{
     private:
@@ -13,6 +13,6 @@ class Libro : public Publicacion{
         string getISBN();
         string geteditorial();
 };
-#include "publicacion.h"
+
 #include "libro.cpp"
 #endif 

@@ -1,20 +1,18 @@
 #ifndef ADMINISTRADOR_H
 #define ADMINISTRADOR_H
-#include <iostream>
-#include <string.h>
-#include "Reporte.h"
+
 class Administrador{
-	private:
-		string IDadmin;
-		string nombre;
-		int nivelAcceso;
-		int numeroR;
-		Reporte *reportes[100]; //variable de composicion
-	public:
-		Administrador(string,string,int);
-		void GenerarReportes();
-		void MostrarReportes();
-		void AdministrarLector();
+    private:
+        string nombre;
+        string passwd;
+    public:
+        Administrador();
+        Administrador(string,string);
+        void setNombre(string);
+        void setPasswd(string);
+        string getNombre();
+        string getPasswd();
 };
-#include "Administrador.cpp"
+
+#include "administrador.cpp"
 #endif

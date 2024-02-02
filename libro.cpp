@@ -18,4 +18,3 @@ string Libro :: getISBN(){
 string Libro :: geteditorial(){
     return editorial;
 }
-

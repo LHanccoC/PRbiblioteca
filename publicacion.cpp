@@ -5,36 +5,36 @@ Publicacion :: Publicacion(string a, int b, string c, string d, int e){
     id = b;
     autor = c;
     fecha = d;
-    npagina = e;
+    nPagina = e;
+}
+Publicacion::Publicacion(){
+    
 }
 
 void Publicacion :: getInfo(){
     cout << "El titulo es: " <<titulo<<endl;
     cout << "El id es: " <<id<<endl;
     cout << "El autor es: " <<autor<<endl;
-    cout << "Ea fecha es: " <<fecha<<endl;
-    cout << "Numero de paginas: " <<npagina<<endl;
+    cout << "La fecha es: " <<fecha<<endl;
+    cout << "Numero de paginas: " <<nPagina<<endl;
 }
 
-string Publicacion :: gettitulo(){
+string Publicacion :: getTitulo(){
     return titulo;
 }
 
-int Publicacion :: getid(){
+int Publicacion :: getId(){
     return id;
 }
 
-string Publicacion :: getautor(){
+string Publicacion :: getAutor(){
     return autor;
 }
 
-string Publicacion :: getfecha(){
+string Publicacion :: getFecha(){
     return fecha;
 }
 
-int Publicacion :: getnpagina(){
-    return npagina;
+int Publicacion :: getnPagina(){
+    return nPagina;
 }
-
-
-
