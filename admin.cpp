@@ -40,7 +40,7 @@ void Admin::registrarAdministrador(string nombre, string passwd, bool in){
     if(in){
         ofstream archivo;
         archivo.open("./Registros/administradores.txt",ios::app);
-        archivo<<nombre<<" "<<passwd<<endl;
+        archivo<<nombre<<" "<<passwd<<" "<<endl;
         archivo.close();
     }
 }
