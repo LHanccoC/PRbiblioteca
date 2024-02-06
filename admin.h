@@ -19,6 +19,7 @@ class Admin{
     public:
         Admin();
         bool registrarBiblibliotecario(string,string,int,bool);
+        void mostrarLectores();
         void mostraBibliotecario(int);
         bool iniciarSesionBiblioteciario(string, string);
         void registrarAdministrador(string,string,bool);

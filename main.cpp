@@ -125,7 +125,8 @@ int main(){
                         cout<<"3. Mostrar las publicaciones disponibles"<<endl;
                         cout<<"4. Realizar un prestamo"<<endl;
                         cout<<"5. Devolver un prestamo"<<endl;
-                        cout<<"6. Volver al menu principal"<<endl;
+                        cout<<"6. Mostrar lectores"<<endl;
+                        cout<<"7. Volver al menu principal"<<endl;
                         cin>>op1;
                         switch(op1){
                             case 1:{
@@ -248,9 +249,14 @@ int main(){
                                     system("pause>nul");
                                 }
                             }
+                            case 6: {
+                                system("cls");
+                                admin.mostrarLectores();
+                                system("pause>nul");
+                            }
                         }
                         
-                    }while(op1 != 6);
+                    }while(op1 != 7);
                 }
                 else{
                     cout<<"Passwd o usuario incorrecto ";
